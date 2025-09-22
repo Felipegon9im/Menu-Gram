@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "es6",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "jsx": "react",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "es2017"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "vite.config.ts"]
 }

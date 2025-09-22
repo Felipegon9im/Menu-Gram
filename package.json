@@ -5,6 +5,9 @@
   "scripts": {
     "build": "tsc"
   },
+  "dependencies": {
+    "@google/genai": "^0.12.0"
+  },
   "devDependencies": {
     "typescript": "^5.0.0"
   }

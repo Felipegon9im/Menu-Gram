@@ -6,8 +6,9 @@
 declare var firebase: any;
 declare var d3: any;
 declare var XLSX: any;
+declare var process: any;
 
-import { GoogleGenAI } from "https://esm.run/@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- Firebase Config ---
@@ -1118,11 +1119,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function handleAIAnalysis() {
-        const apiKey = (window as any).GEMINI_API_KEY;
-        if (!apiKey || apiKey === "YOUR_GEMINI_API_KEY_HERE") {
-            showToast("A chave da API do Gemini não está configurada no arquivo env.js.", true);
-            return;
-        }
         if (!reportData || reportData.length === 0) {
             showToast("Gere um relatório primeiro para poder analisar.", true);
             return;
@@ -1142,7 +1138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Fix: Cast inputs to HTMLInputElement to access value.
             const prompt = generateAIPrompt(reportData, (document.getElementById('start-date') as HTMLInputElement).value, (document.getElementById('end-date') as HTMLInputElement).value);
-            const ai = new GoogleGenAI({ apiKey });
+            const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
             const response = await ai.models.generateContent({
               model: 'gemini-2.5-flash',
               contents: prompt,

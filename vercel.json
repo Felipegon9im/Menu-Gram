@@ -1,1 +1,8 @@
-full contents of vercel.json
+{
+  "rewrites": [
+    {
+      "source": "/((?!api/|_next/|static/|favicon.ico|sw.js|.*\\..*).*)",
+      "destination": "/menu.html"
+    }
+  ]
+}

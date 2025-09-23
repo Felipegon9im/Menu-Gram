@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && cp index.html public/ && cp menu.html public/ && cp index.css public/"
   },
   "dependencies": {
     "@google/genai": "^0.12.0"

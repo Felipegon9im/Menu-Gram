@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "es2017"]
+    "lib": ["dom", "es2017"],
+    "outDir": "public"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "vite.config.ts"]
